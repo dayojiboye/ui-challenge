@@ -1,0 +1,215 @@
+.homepage {
+  width: var(--full);
+
+  .lead {
+    width: var(--full);
+    max-width: 480px;
+    padding-left: 96px;
+
+    @media (max-width: 1114px) {
+      text-align: center;
+      max-width: 600px;
+      padding: 60px 16px;
+      margin: 0 auto;
+    }
+
+    > h1 {
+      font-size: 45px;
+
+      @media (max-width: 700px) {
+        font-size: 2rem;
+      }
+    }
+
+    > p {
+      margin: 32px 0;
+    }
+
+    > a {
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius);
+      color: var(--text-dark);
+      padding: 12px 16px;
+      font-weight: 700;
+    }
+  }
+
+  .hero-bg {
+    position: absolute;
+    right: 0;
+    top: -50px;
+    z-index: -1;
+    height: 800px;
+    -webkit-clip-path: circle(50% at 77% 37%);
+    clip-path: circle(50% at 77% 37%);
+    width: 80%;
+    max-width: 1050px;
+    background: url("../../assets/images/woman-hero.png") no-repeat left 250px
+      top 0px;
+    background-size: cover;
+
+    @media (max-width: 1114px) {
+      display: none;
+    }
+  }
+
+  .calculate {
+    width: var(--full);
+    max-width: 1032px;
+    margin: 210px auto;
+
+    @media (max-width: 1114px) {
+      margin: 60px auto;
+    }
+
+    form {
+      width: var(--full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 900px) {
+        flex-direction: column;
+      }
+
+      .form-group {
+        margin-right: 16px;
+
+        @media (max-width: 900px) {
+          margin-right: 0;
+          margin-bottom: 16px;
+        }
+
+        .select_wrapper {
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          &::after {
+            content: "\f078";
+            font-weight: 900;
+            font-family: FontAwesome;
+            font-size: 12px;
+            color: var(--text-input);
+            position: absolute;
+            right: 16px;
+            pointer-events: none;
+            flex-shrink: 0;
+          }
+
+          select {
+            color: var(--text-input);
+            outline: none;
+            padding: 12px 16px;
+            width: 180px;
+            cursor: pointer;
+
+            @media (max-width: 900px) {
+              width: 260px;
+            }
+          }
+        }
+
+        input {
+          padding: 12px 16px;
+          width: 260px;
+          color: inherit;
+
+          &::placeholder {
+            color: var(--text-input);
+          }
+        }
+
+        > button {
+          padding: 12px;
+          background: var(--green);
+          border: 1px solid var(--green);
+          border-radius: var(--radius);
+          color: var(--white);
+          font-size: 14px;
+          width: 146px;
+          font-weight: 700;
+
+          @media (max-width: 900px) {
+            width: 260px;
+          }
+        }
+      }
+    }
+  }
+
+  .extra-info {
+    width: var(--full);
+    max-width: 1032px;
+    margin: 200px auto;
+
+    @media (max-width: 1114px) {
+      margin: 60px auto 100px;
+    }
+
+    > h2 {
+      font-size: 40px;
+      max-width: 486px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+
+      @media (max-width: 700px) {
+        font-size: 1.5rem;
+        max-width: 250px;
+      }
+    }
+
+    &__content {
+      display: flex;
+      width: var(--full);
+      margin-top: 48px;
+      justify-content: space-evenly;
+
+      @media (max-width: 900px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .info-block {
+        max-width: 280px;
+        // margin-right: 32px;
+
+        @media (max-width: 900px) {
+          margin-bottom: 32px;
+        }
+
+        .info-icon {
+          background: var(--white);
+          border-radius: 7px;
+          box-shadow: 2px 6px 16px -5px rgba(0, 0, 0, 0.29);
+          width: 100px;
+          height: 85px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        h3 {
+          font-size: 25px;
+          text-align: center;
+          margin: 32px 0 16px;
+
+          @media (max-width: 700px) {
+            font-size: 1.2rem;
+          }
+        }
+
+        p {
+          color: var(--grey);
+          font-size: 14px;
+          text-align: center;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+}

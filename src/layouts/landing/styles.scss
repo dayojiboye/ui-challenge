@@ -1,0 +1,13 @@
+.landing-layout {
+  width: var(--full);
+  height: auto;
+  position: relative;
+  // background: red;
+  overflow-x: hidden;
+
+  .main {
+    width: var(--full);
+    height: var(--full);
+    margin: 32px 0;
+  }
+}

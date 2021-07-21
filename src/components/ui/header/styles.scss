@@ -1,0 +1,55 @@
+.header {
+  width: var(--full);
+  padding: 32px 96px;
+
+  @media (max-width: 1114px) {
+    padding: 16px;
+  }
+
+  > nav {
+    width: var(--full);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-links {
+      ul {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 1114px) {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        li {
+          &:first-of-type {
+            margin-right: 32px;
+
+            @media (max-width: 1114px) {
+              margin-right: 0;
+              margin-bottom: 20px;
+            }
+          }
+
+          a {
+            color: var(--white);
+            font-weight: 600;
+
+            @media (max-width: 1114px) {
+              color: var(--text-dark);
+            }
+
+            &.signup-btn {
+              background: var(--gold);
+              border: 1px solid var(--gold);
+              border-radius: var(--radius);
+              color: var(--text-dark);
+              padding: 12px 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
