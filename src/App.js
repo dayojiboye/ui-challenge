@@ -8,6 +8,7 @@ import AuthLayout from "./layouts/auth";
 // pages
 import { HomePage } from "./pages/home";
 import { LoginPage } from "./pages/login";
+import { SignupPage } from "./pages/signup";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <AppRoute exact path="/" component={HomePage} layout={LandingLayout} />
         <AppRoute path="/login" component={LoginPage} layout={AuthLayout} />
+        <AppRoute path="/signup" component={SignupPage} layout={AuthLayout} />
         <Redirect to="/" />
       </Switch>
     </>

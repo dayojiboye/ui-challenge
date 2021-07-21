@@ -24,7 +24,7 @@ const Login = () => {
       </div>
 
       <div className="login__header">
-        <span>Already have an account?</span>
+        <span>Don't have an account?</span>
 
         <NavLink to="/signup">Signup</NavLink>
       </div>
@@ -42,7 +42,7 @@ const Login = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" />
           </div>
 

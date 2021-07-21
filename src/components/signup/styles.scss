@@ -1,9 +1,10 @@
-.login {
+.signup {
   width: var(--full);
   height: var(--full);
 
   &__logo {
     text-align: center;
+
     @media (min-width: 1024px) {
       display: none;
     }
@@ -51,7 +52,7 @@
     }
   }
 
-  .login-form {
+  .signup-form {
     width: var(--full);
     height: 80%;
     display: flex;
@@ -64,7 +65,7 @@
 
     &__header {
       width: var(--full);
-      max-width: 270px;
+      max-width: 385px;
 
       @media (max-width: 1023px) {
         margin: 0 auto;
@@ -110,7 +111,8 @@
         }
 
         > a {
-          color: var(--text-primary);
+          color: var(--yellow-deep);
+          order: 1;
         }
 
         > button {
@@ -121,9 +123,10 @@
           padding: 12px;
           font-weight: 700;
           width: 208px;
+          order: 2;
 
           @media (max-width: 1023px) {
-            margin-bottom: 16px;
+            margin-top: 16px;
           }
         }
       }
