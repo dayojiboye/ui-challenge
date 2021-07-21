@@ -66,6 +66,14 @@ button {
   cursor: pointer;
 }
 
+label {
+  display: table;
+  width: auto;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
 input,
 select {
   -webkit-appearance: none;
@@ -75,6 +83,10 @@ select {
   border: 2px solid #e3e6ea;
   background: var(--fade);
   font-size: 14px;
+}
+
+select {
+  cursor: pointer;
 }
 
 // 1114px 1023px 900px 700px

@@ -1,19 +1,21 @@
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Switch, Redirect } from "react-router-dom";
+import AppRoute from "./hoc/appRoute";
 
 // layouts
 import LandingLayout from "./layouts/landing";
+import AuthLayout from "./layouts/auth";
 
 // pages
 import { HomePage } from "./pages/home";
+import { LoginPage } from "./pages/login";
 
 function App() {
   return (
     <>
       <Switch>
-        <LandingLayout>
-          <Route path="/" exact component={HomePage} />
-          <Redirect to="/" />
-        </LandingLayout>
+        <AppRoute exact path="/" component={HomePage} layout={LandingLayout} />
+        <AppRoute path="/login" component={LoginPage} layout={AuthLayout} />
+        <Redirect to="/" />
       </Switch>
     </>
   );
