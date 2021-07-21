@@ -1,13 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory, Redirect } from "react-router-dom";
 import Logo from "../../assets/images/SFS-LOGOS-4-150x150.png";
+import AlertBox from "../ui/alert";
+import { useSelector, useDispatch } from "react-redux";
+import * as actions from "../../store/actions";
 import "./styles.scss";
 
 const Signup = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const [fields, setFields] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+  });
+
+  const { currentUser, error, loading } = useSelector((state) => {
+    return {
+      currentUser: state.auth.currentUser,
+      error: state.auth.error,
+      loading: state.auth.loading,
+    };
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    setFields({
+      ...fields,
+      [name]: value,
+    });
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
+
+    dispatch(actions.signup({ ...fields }));
   };
+
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        dispatch(actions.authError(null));
+      }, 4000);
+    }
+
+    if (currentUser) history.push("/account-success");
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [error, currentUser]);
+
+  if (currentUser) return <Redirect to="/account-user" />;
 
   return (
     <div className="signup">
@@ -33,7 +79,7 @@ const Signup = () => {
         <div className="signup-form__header">
           <h2>Create an account</h2>
           <p>
-            Lets onboard you so we will know who you are. it will only take a
+            Let's onboard you so we will know who you are. it will only take a
             minute
           </p>
         </div>
@@ -41,26 +87,60 @@ const Signup = () => {
         <form onSubmit={onSubmit}>
           <div className="form-group">
             <label htmlFor="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" />
+            <input
+              type="text"
+              id="firstName"
+              name="first_name"
+              onChange={handleInputChange}
+              value={fields.first_name}
+              required
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" />
+            <input
+              type="text"
+              id="lastName"
+              name="last_name"
+              onChange={handleInputChange}
+              value={fields.last_name}
+              required
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              onChange={handleInputChange}
+              value={fields.email}
+              required
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              onChange={handleInputChange}
+              value={fields.password}
+              required
+            />
           </div>
 
+          {error && <AlertBox>{error}</AlertBox>}
+
           <div className="form-footer">
-            <button type="submit">Signup</button>
+            <button type="submit" disabled={loading}>
+              {loading && "Loading..."}
+
+              {!loading && "Signup"}
+            </button>
 
             <a href="/">Previous</a>
           </div>

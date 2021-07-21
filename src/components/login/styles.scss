@@ -132,6 +132,13 @@
           font-weight: 700;
           width: 208px;
 
+          &:disabled {
+            background: var(--fade);
+            border: 1px solid var(--fade);
+            color: var(--white);
+            cursor: not-allowed;
+          }
+
           @media (max-width: 1023px) {
             margin-bottom: 16px;
           }

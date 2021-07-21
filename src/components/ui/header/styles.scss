@@ -48,6 +48,16 @@
               padding: 12px 32px;
             }
           }
+
+          .log-out {
+            font-weight: 700;
+            cursor: pointer;
+            color: var(--white);
+
+            @media (max-width: 1114px) {
+              color: var(--text-dark);
+            }
+          }
         }
       }
     }
