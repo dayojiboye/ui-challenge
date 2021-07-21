@@ -4,6 +4,7 @@
 
   &__logo {
     text-align: center;
+
     @media (min-width: 1024px) {
       display: none;
     }
@@ -57,8 +58,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 32px;
 
     @media (max-width: 1023px) {
+      height: auto;
+    }
+
+    @media (max-height: 800px) {
       height: auto;
     }
 
@@ -73,6 +79,10 @@
 
       h2 {
         font-size: 38px;
+
+        @media (max-width: 700px) {
+          font-size: 32px;
+        }
       }
     }
 

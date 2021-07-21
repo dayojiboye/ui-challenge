@@ -17,7 +17,7 @@ const Signup = () => {
         </NavLink>
 
         <div className="welcome-text-mobile">
-          <span>Welcome to:</span>
+          <span>Get started with</span>
 
           <h1>SFS Capital</h1>
         </div>

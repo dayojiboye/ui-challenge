@@ -1,0 +1,92 @@
+.account-success {
+  width: var(--full);
+  height: var(--full);
+
+  &__logo {
+    text-align: center;
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+
+    .welcome-text-mobile {
+      margin: 32px 0;
+
+      h1 {
+        font-size: 50px;
+
+        @media (max-width: 700px) {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+
+  &__header {
+    width: var(--full);
+
+    @media (max-width: 1023px) {
+      text-align: center;
+    }
+
+    > a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: inherit;
+      font-weight: 700;
+
+      > svg {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &__message {
+    width: var(--full);
+    text-align: center;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 32px;
+
+    @media (max-width: 1023px) {
+      height: auto;
+    }
+
+    @media (max-height: 800px) {
+      height: auto;
+    }
+
+    h2 {
+      margin-top: 32px;
+      font-size: 38px;
+
+      @media (max-width: 700px) {
+        font-size: 32px;
+      }
+    }
+
+    p {
+      max-width: 420px;
+      margin: 16px auto 64px;
+    }
+
+    > button {
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius);
+      color: var(--text-dark);
+      padding: 12px;
+      font-weight: 700;
+      width: var(--full);
+      max-width: 420px;
+
+      @media (max-width: 1023px) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

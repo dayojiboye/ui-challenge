@@ -19,11 +19,13 @@ const AuthLayout = ({ children }) => {
         </div>
 
         <div className="header__lead">
-          {/* <span>Welcome to:</span> */}
-
           {location.pathname === "/login" && <span>Welcome to:</span>}
 
           {location.pathname === "/signup" && <span>Get started with</span>}
+
+          {location.pathname === "/account-success" && (
+            <span>You are almost there with</span>
+          )}
 
           <h1>SFS Capital</h1>
         </div>

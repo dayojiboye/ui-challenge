@@ -9,6 +9,7 @@ import AuthLayout from "./layouts/auth";
 import { HomePage } from "./pages/home";
 import { LoginPage } from "./pages/login";
 import { SignupPage } from "./pages/signup";
+import { AccountSuccessPage } from "./pages/accountSuccess";
 
 function App() {
   return (
@@ -17,6 +18,11 @@ function App() {
         <AppRoute exact path="/" component={HomePage} layout={LandingLayout} />
         <AppRoute path="/login" component={LoginPage} layout={AuthLayout} />
         <AppRoute path="/signup" component={SignupPage} layout={AuthLayout} />
+        <AppRoute
+          path="/account-success"
+          component={AccountSuccessPage}
+          layout={AuthLayout}
+        />
         <Redirect to="/" />
       </Switch>
     </>
